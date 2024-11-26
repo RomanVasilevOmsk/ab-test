@@ -85,6 +85,11 @@
   overflow: auto;
   border-radius: 4px;
   box-shadow: 0px 10px 30px 0px rgba(46, 62, 154, 0.1);
+  visibility: hidden;
+}
+
+.select[data-is-open="true"] {
+  visibility: visible;
 }
 
 .option {

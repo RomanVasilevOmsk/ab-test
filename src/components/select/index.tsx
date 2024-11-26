@@ -147,23 +147,21 @@ const Select = (props: SelectProps) => {
         >
           {selected?.title || placeholder}
         </div>
-        {isOpen && (
-          <ul className={Styles.select}>
-            {options.map((option) => (
-              <OptionEl
-                key={option.value}
-                option={option}
-                onClick={handleOptionClick}
-                loadMore={onNextPage}
-                lastId={options[options.length - 1].value}
-                isSelected={option.value === selected?.value}
-              />
-            ))}
-            {isLoadMoreLoading && (
-              <li className={Styles.option}>... Loading ...</li>
-            )}
-          </ul>
-        )}
+        <ul className={Styles.select} data-is-open={!!isOpen}>
+          {options.map((option) => (
+            <OptionEl
+              key={option.value}
+              option={option}
+              onClick={handleOptionClick}
+              loadMore={onNextPage}
+              lastId={options[options.length - 1].value}
+              isSelected={option.value === selected?.value}
+            />
+          ))}
+          {isLoadMoreLoading && (
+            <li className={Styles.option}>... Loading ...</li>
+          )}
+        </ul>
       </div>
     </div>
   );
