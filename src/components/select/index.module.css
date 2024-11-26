@@ -1,0 +1,138 @@
+.selectField {
+  width: 100%;
+  max-width: 250px;
+}
+
+.selectInner {
+  font-size: 13px;
+  position: relative;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--main-color);
+  text-align: left;
+}
+
+.arrow {
+  position: absolute;
+  right: 12px;
+  transition: transform 0.2s ease-in-out;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.placeholder {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 32px;
+  padding: 5px 30px 5px 11px;
+  cursor: pointer;
+  border: 1px;
+  line-height: 20px;
+  color: var(--gray-color);
+  background: var(--white-bg-color);
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.placeholder[data-status="default"] {
+  border: 1px solid var(--white-bg-color);
+}
+
+.placeholder[data-status="invalid"] {
+  border: 1px solid rgba(255, 0, 0, 1);
+}
+
+.placeholder[data-selected="true"] {
+  color: var(--main-color);
+  border-color: var(--blue-color);
+}
+
+.selectInner[data-is-active="true"] .arrow {
+  transform: rotate(180deg);
+}
+
+.selectInner[data-is-active="true"] .placeholder {
+  border-color: var(--blue-color);
+}
+
+.selectInner:not([data-is-active="true"])
+  .placeholder:not([data-status="invalid"]):hover {
+  border: 1px solid var(--blue-color);
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 4px 0;
+  box-sizing: border-box;
+  z-index: 10;
+  background-color: var(--white-bg-color);
+  max-height: 168px;
+  overflow: auto;
+  border-radius: 4px;
+  box-shadow: 0px 10px 30px 0px rgba(46, 62, 154, 0.1);
+}
+
+.option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  height: 32px;
+  padding: 6px 5px;
+  border: 2px;
+  cursor: pointer;
+  line-height: 16px;
+  background-color: var(--white-bg-color);
+  color: var(--main-color);
+  border: 2px solid var(--white-bg-color);
+}
+
+.option span {
+  display: block;
+  flex: 1;
+}
+
+.option[aria-selected="true"] {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.option:hover {
+  background-color: var(--select-bg-color);
+  border-color: var(--select-bg-color);
+}
+.option[data-selected="true"] {
+  background-color: var(--white-bg-color);
+  border-color: var(--blue-color);
+}
+.option[data-selected="true"]:hover {
+  background-color: var(--select-bg-color);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border-radius: 100%;
+  color: var(--white-bg-color);
+  background-color: var(--blue-color);
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
+}
